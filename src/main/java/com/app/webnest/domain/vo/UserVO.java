@@ -42,5 +42,4 @@ public class UserVO {
     this.userNickname = userInsertSocialVO.getUserNickname();
     this.userProvider = userInsertSocialVO.getUserProvider();
   }
-
 }
