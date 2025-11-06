@@ -7,7 +7,7 @@ import lombok.*;
 public class QuizPersonalVO {
     private Long id;
     //erd 확인 fk키
-    private Boolean quizPersonalIssolve;
+    private Boolean quizPersonalIsSolve;
     private Boolean quizPersonalBookmark;
     private Long userId;
     private Long quizId;
