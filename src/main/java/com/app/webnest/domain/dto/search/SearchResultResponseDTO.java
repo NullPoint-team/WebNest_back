@@ -1,0 +1,19 @@
+package com.app.webnest.domain.dto.search;
+
+import com.app.webnest.domain.vo.PostVO;
+import com.app.webnest.domain.vo.QuizVO;
+import com.app.webnest.domain.vo.UserVO;
+import lombok.*;
+
+import java.util.List;
+
+@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@ToString
+public class SearchResultResponseDTO {
+    private Integer total;
+    private List<QuizVO> quizzes;
+    private List<PostVO> posts;
+    private List<UserVO> users;
+}
