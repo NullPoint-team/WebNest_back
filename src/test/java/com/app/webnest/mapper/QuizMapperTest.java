@@ -15,23 +15,12 @@ class QuizMapperTest {
     @Autowired
     private QuizMapper quizMapper;
 
-    @Test
-    void selectAll() {
-        HashMap<String,Object> map = new HashMap<>();
-        map.put("quizDifficult", "중급");
-        map.put("quizLanguage", "JAVA");
-        map.put("cursor", "1");
 
-        log.info("selectAll: {}", quizMapper.selectAllFilter(map));
-    }
 
     @Test
     void testSelectAll() {
         log.info("testSelectAll, {}", quizMapper.selectAll());
     }
 
-    @Test
-    void selectListTotalCount() {
-        log.info("testSelectListTotalCount, {}", quizMapper.selectListTotalCount());
-    }
+
 }

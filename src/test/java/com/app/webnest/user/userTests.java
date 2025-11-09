@@ -69,6 +69,7 @@ public class userTests {
   @Test
   public void userMapperInsertSocialTest(){
     UserSocialVO userSocialVO = new UserSocialVO();
+    UserVO userVO = new UserVO();
     userVO.setUserName("test");
     userVO.setUserPhone("01012344321");
     userVO.setUserEmail("test123@gmail.com");

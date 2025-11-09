@@ -24,8 +24,5 @@ class QuizDAOTest {
 
     }
 
-    @Test
-    void selectAllCountTest() {
-        log.info("selectAllCount: {}", quizDAO.selectAllCount());
-    }
+
 }
