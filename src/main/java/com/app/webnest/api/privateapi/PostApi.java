@@ -15,7 +15,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/post")
-public class    PostApi {
+public class PostApi {
 
     private final PostService postService;
 
@@ -47,7 +47,7 @@ public class    PostApi {
 
 
     // 상세 조회
-    @GetMapping("get-post/{id}")
+    @GetMapping("/get-post/{id}")
     public ResponseEntity<ApiResponseDTO> getPost(@PathVariable Long id) {
         PostResponseDTO post = postService.getPost(id);
         return ResponseEntity.status(HttpStatus.OK).body(ApiResponseDTO.of("게시글 조회 성공", post));

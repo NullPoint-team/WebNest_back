@@ -21,19 +21,4 @@ public class PostResponseDTO {
 }
 
 
-//package com.app.threetier.domain.dto;
-//
-//import com.app.threetier.domain.vo.MemberVO;
-//import com.app.threetier.domain.vo.PostVO;
-//import lombok.*;
-//
-//public class PostResponseDTO {
-//    private Long id;
-//    private String postTitle;
-//    private String postContent;
-//    private Long postReadCount;
-//    private Long memberId;
-//    private String memberName;
-//
-//
-//}
+
