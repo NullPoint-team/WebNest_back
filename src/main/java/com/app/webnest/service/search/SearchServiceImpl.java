@@ -1,29 +1,57 @@
 package com.app.webnest.service.search;
 
-import com.app.webnest.domain.dto.search.SearchResultResponseDTO;
-import com.app.webnest.domain.vo.PostVO;
+import com.app.webnest.domain.dto.search.PostSearchDTO;
 import com.app.webnest.domain.vo.QuizVO;
 import com.app.webnest.domain.vo.UserVO;
 import com.app.webnest.repository.search.SearchDAO;
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
-@RequiredArgsConstructor
 @Service
-@Transactional(rollbackFor=Exception.class)
+@Transactional(rollbackFor = Exception.class)
+@ToString
+@RequiredArgsConstructor
 public class SearchServiceImpl implements SearchService {
     private final SearchDAO searchDAO;
 
     @Override
-    public SearchResultResponseDTO getSearchResult(String query) {
-        SearchResultResponseDTO searchResultResponseDTO = new SearchResultResponseDTO();
-        List<PostVO> foundPosts = searchDAO.findPostByQuery(query);
-        List<UserVO> foundUsers = searchDAO.findUserByQuery(query);
-        List<QuizVO> foundQuizzes = searchDAO.findQuizByQuery(query);
-        return searchResultResponseDTO;
+    public List<PostSearchDTO> getOpenPostBySearchQuery(String searchQuery) {
+        List<PostSearchDTO> foundOpenPosts = searchDAO.findSearchOpenPosts(searchQuery);
+        if(foundOpenPosts.size() == 0){
+            return new ArrayList<>();
+        }
+        return foundOpenPosts;
     }
 
+    @Override
+    public List<PostSearchDTO> getQuestionPostBySearchQuery(String searchQuery) {
+        List<PostSearchDTO> foundQuestionPosts = searchDAO.findSearchQuestionPosts(searchQuery);
+        if(foundQuestionPosts.size() == 0){
+            return new ArrayList<>();
+        }
+        return foundQuestionPosts;
+    }
+
+    @Override
+    public List<QuizVO> getQuizBySearchQuery(String searchQuery) {
+        List<QuizVO> foundQuizzes = searchDAO.findSearchQuizzes(searchQuery);
+        if(foundQuizzes.size() == 0){
+            return new ArrayList<>();
+        }
+        return foundQuizzes;
+    }
+
+    @Override
+    public List<UserVO> getUserBySearchQuery(String searchQuery) {
+        List<UserVO> foundUsers = searchDAO.findSearchUsers(searchQuery);
+        if(foundUsers.size() == 0){
+            return new ArrayList<>();
+        }
+        return foundUsers;
+    }
 }

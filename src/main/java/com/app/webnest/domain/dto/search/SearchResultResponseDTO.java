@@ -14,6 +14,7 @@ import java.util.List;
 public class SearchResultResponseDTO {
     private Integer total;
     private List<QuizVO> quizzes;
-    private List<PostVO> posts;
+    private List<PostSearchDTO> openPosts;
+    private List<PostSearchDTO> questionPosts;
     private List<UserVO> users;
 }

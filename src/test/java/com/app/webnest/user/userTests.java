@@ -1,39 +1,48 @@
-//package com.app.webnest.user;
-//
-//import com.app.webnest.domain.vo.UserSocialVO;
-//import com.app.webnest.domain.vo.UserVO;
-//import com.app.webnest.mapper.UserMapper;
-//import com.app.webnest.mapper.UserSocialMapper;
-//import com.app.webnest.service.user.UserService;
-//import com.app.webnest.service.user.UserSocialService;
-//import lombok.extern.slf4j.Slf4j;
-//import org.junit.jupiter.api.Test;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.test.context.SpringBootTest;
-//import org.springframework.context.annotation.Configuration;
-//
-//import java.util.Date;
-//import java.util.List;
-//import java.util.Optional;
-//
-//@SpringBootTest
-//@Slf4j@Configuration
-//public class userTests {
-//  @Autowired
-//  private UserMapper userMapper;
-//  @Autowired
-//  private UserSocialMapper userSocialMapper;
-//  @Autowired
-//  private UserService userService;
-//  @Autowired
-//  private UserSocialService userSocialService;
-//
+package com.app.webnest.user;
+
+import com.app.webnest.domain.vo.UserSocialVO;
+import com.app.webnest.domain.vo.UserVO;
+import com.app.webnest.mapper.UserMapper;
+import com.app.webnest.mapper.UserSocialMapper;
+import com.app.webnest.service.user.UserService;
+import com.app.webnest.service.user.UserSocialService;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
+
+@SpringBootTest
+@Slf4j@Configuration
+public class userTests {
+  @Autowired
+  private UserMapper userMapper;
+  @Autowired
+  private UserSocialMapper userSocialMapper;
+  @Autowired
+  private UserService userService;
+  @Autowired
+  private UserSocialService userSocialService;
+
+  @Test
+    public void selectTest(){
+      log.info("알람 테스트:::::::::::{}",userMapper.selectCommentNotificationByUserId(11L));
+      log.info("알람 테스트:::::::::::{}",userMapper.selectPostNotificationByUserId(11L));
+        log.info("알람 테스트 ::::::::: 팔로우 {}",userMapper.selectFollowNotificationByUserId(11L));
+
+
+  }
 //  @Test
 //  public void userMapperSelectTest(){
 //    Optional<UserVO> result = null;
 //    Long input = 1L;
-//
-//  }
+//      userMapper.selectAll();
+
+  }
 //
 //  @Test
 //  public void userMapperSelectIdByUserEmailTest(){
@@ -88,5 +97,5 @@
 //  public void userMapperDeleteTest(){
 //
 //  }
-//
-//}
+
+

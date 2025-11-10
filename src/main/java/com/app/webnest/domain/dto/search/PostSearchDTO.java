@@ -1,20 +1,26 @@
 package com.app.webnest.domain.dto.search;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 
 @NoArgsConstructor @AllArgsConstructor
 @Getter @Setter
+@ToString
 public class PostSearchDTO {
+//    TBP.ID, TBP.POST_TITLE, TBP.POST_CONTENT,
+//    TBP.POST_CREATE_AT, TBP.POST_VIEW_COUNT, TBP.POST_TYPE, TBP.USER_ID,
+//    TBU.USER_LEVEL, TBU.USER_THUMBNAIL_URL, TBU.USER_NICKNAME,
+//    COUNT(TBC.ID) AS COMMENT_COUNT
     private Long id;
-    private String postContent;
     private String postTitle; // erd 추가
-    private Date postCreateAt;
+    private String postContent;
+    private Date postNotificationCreatedAt;
     private Integer postViewCount;
+    private String postType;
     private Long userId;
-    private String postType; // erd추가 -> js, orvcle, ...( 문제 둥지 ) / 없음 ( 열린 둥지 )
+    private Integer userLevel;
+    private String userThumbnailUrl;
+    private String userNickname;
+    private Integer commentCount;
 }

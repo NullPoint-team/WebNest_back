@@ -1,8 +1,5 @@
-package com.app.webnest.api.publicapi.search;
+package com.app.webnest.repository.notification;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +9,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @Slf4j
-@Data
-class SearchAPITest {
+class NotificationDAOTest {
     @Autowired
-    SearchAPI searchAPI;
+    NotificationDAO notificationDAO;
 
     @Test
-    public void testFindUserByQuery() {
-        log.info("ㄱ검색결과 :::::::::{}", searchAPI.searchResult("JS"));
+    public void getTest(){
+        notificationDAO.getPostNotificationByUserId(1L);
     }
 }

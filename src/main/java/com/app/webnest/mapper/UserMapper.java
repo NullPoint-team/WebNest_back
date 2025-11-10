@@ -1,5 +1,11 @@
 package com.app.webnest.mapper;
 
+import com.app.webnest.domain.dto.notification.CommentNotificationDTO;
+import com.app.webnest.domain.dto.notification.FollowNotificationDTO;
+import com.app.webnest.domain.dto.notification.PostNotificationDTO;
+import com.app.webnest.domain.dto.search.PostSearchDTO;
+import com.app.webnest.domain.vo.PostVO;
+import com.app.webnest.domain.vo.QuizVO;
 import com.app.webnest.domain.vo.UserInsertSocialVO;
 import com.app.webnest.domain.vo.UserVO;
 import org.apache.ibatis.annotations.Mapper;
@@ -34,4 +40,21 @@ public interface UserMapper {
 
   // 회원 탈퇴
   public void delete(Long id);
+
+//  승찬 기생중-------------------
+  public List<UserVO> selectByQuery(String query);
+
+  public List<PostSearchDTO> selectQuestionPostQByQuery(String query);
+
+  public List<PostSearchDTO> selectOpenPostQByQuery(String query);
+
+  public List<QuizVO> selectQuizByQuery(String query);
+
+//                  알람
+//    post에 대한 알림
+    public List<PostNotificationDTO> selectPostNotificationByUserId(Long receiverUserId);
+//    comment 알림 test 1L / 3L
+    public List<CommentNotificationDTO> selectCommentNotificationByUserId(Long receiverUserId);
+//    newFollow 알림 test 1L
+    public List<FollowNotificationDTO> selectFollowNotificationByUserId(Long receiverUserId);
 }

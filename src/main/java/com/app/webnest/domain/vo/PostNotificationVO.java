@@ -8,9 +8,10 @@ import java.util.Date;
 @Getter @Setter @ToString @EqualsAndHashCode(of = "id")
 public class PostNotificationVO {
     private Long id;
-    private Long userId;
+    private Long actorUserId;
+    private Long receiverUserId;
     private Long postId;
     private Date postNotificationCreateAt;
     private boolean postNotificationIsRead;
-    private String postNotificationContent; // erd수정
+    private String postNotificationAction; // erd수정
 }

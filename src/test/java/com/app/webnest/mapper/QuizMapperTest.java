@@ -1,20 +1,25 @@
-//package com.app.webnest.mapper;
-//
-//import com.app.webnest.mapper.quiz.QuizMapper;
-//import lombok.extern.slf4j.Slf4j;
-//import org.junit.jupiter.api.Test;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.test.context.SpringBootTest;
-//
-//import java.util.HashMap;
-//
-//@SpringBootTest
-//@Slf4j
-//class QuizMapperTest {
-//
-//    @Autowired
-//    private QuizMapper quizMapper;
-//
+package com.app.webnest.mapper;
+
+import com.app.webnest.mapper.quiz.QuizMapper;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.HashMap;
+
+@SpringBootTest
+@Slf4j
+class QuizMapperTest {
+
+    @Autowired
+    private QuizMapper quizMapper;
+
+//    @Test
+//    public void selectTest(){
+//        quizMapper.selectQuizByQuery("배열");
+//    }
+
 //    @Test
 //    void selectAll() {
 //        HashMap<String,Object> map = new HashMap<>();
@@ -34,4 +39,4 @@
 //    void selectListTotalCount() {
 //        log.info("testSelectListTotalCount, {}", quizMapper.selectListTotalCount());
 //    }
-//}
+}

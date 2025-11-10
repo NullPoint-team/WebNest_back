@@ -17,4 +17,6 @@ public interface QuizMapper {
 
 //    총 문제수
     public Long selectListTotalCount(HashMap<String, Object> filters);
+
+    public List<QuizVO> selectQuizByQuery(String query);
 }
